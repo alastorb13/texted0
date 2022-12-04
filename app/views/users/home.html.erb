@@ -1,37 +1,5 @@
-hola Universo
+Hola Universo🌌
 
+<%= render "exercises/ex0" %>
 
-<% list = [ "Alejo", "Maye"] %>
-
-<% nombres = []
-
-list.each do |name|
-  nombres.push(name)
-end %>
-
-<%= nombres %>
-
-
-
-<%
-suma = 0
-
-for i in(0..10)
-    suma += i
-  end
-%>
-
-<%= suma %>
-
-
-<% def sumar(num)
-    suma = 0
-      for i in(0..num)
-        suma += i
-      end
-
-    return suma
-
-end %>
-
-<%= sumar(6) %>
+<%= render "exercises/ex1" %>
