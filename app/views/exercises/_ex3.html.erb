@@ -1,0 +1,13 @@
+<%
+def verify(result)
+  x = ""
+  if result == "pass"
+    x = "Passed"
+  else
+    x = "Failed"
+  end
+  return x
+end
+%>
+
+<%= verify("pass").to_s %>
