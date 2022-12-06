@@ -1,0 +1,10 @@
+<% ciudades = %w[ Londres Oslo París Ámsterdam Berlín ]
+visitando = %w[Berlín Oslo]
+
+x = "Aun necesito " + "visitar las " + "siguientes ciudades:", ciudades - visitando
+%>
+
+<ul><% x[1].each do |lugar| %>
+<li><%= lugar %></li>
+<% end %>
+</ul>

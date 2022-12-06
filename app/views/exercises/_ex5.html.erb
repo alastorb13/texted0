@@ -1,0 +1,15 @@
+<% def main()
+    name = "stranger"
+    message = "Hi #{name}"
+    count =  "Current count:"
+    range = 0
+    for i in (0..10)
+      range += i
+    end
+    x = [message, count, range]
+  end %>
+
+<ul><% main.each do |x| %>
+<li><%= x %></li>
+<% end %>
+</ul>
