@@ -1,0 +1,18 @@
+<%
+def suma(num1, num2)
+  return num1 + num2
+end %>
+
+<%
+def multiplica(num1, num2)
+  return num1 * num2
+end %>
+
+<%
+def suma_y_multiplica(num1, num2)
+  return suma(num1,num2) * multiplica(num1, num2)
+end %>
+
+<%= suma(1, 4) %>
+<%= multiplica(1, 4) %>
+<%= suma_y_multiplica(1, 4) %>
