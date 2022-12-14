@@ -1,10 +1,62 @@
 <%
-def nombres
-  nombres = ["a", "s", "l", "f" "e", "o", "n", "j", "a", "m", "t", "v", "r", "i", "d", "r"]
-  nombre.each |nombre| do
-    while nombre = "alejo"
-
-    end
+def numero
+  num = [1, 2, 3, 4, 5, 6]
+  x = ""
+  num.each do |numeros|
+    x += numeros.to_s
   end
+  return x
 end
 %>
+
+<%
+def planetas
+  planeta = ["marte", ", ", "venus", ", ", "jupiter"]
+  x = ""
+  planeta.each do |planet|
+    x += planet.to_s
+  end
+  return x
+end
+%>
+
+<%
+def libros
+  libros = ["Monstruos invisibles", ", ", "El retrato de Dorian Gray"]
+  x = ""
+  libros.each do |l|
+    x += l.to_s
+  end
+  return x
+end
+%>
+
+<%
+def peliculas
+  pelicula = ["Coraline", ", ", "Alicia en el pais de las maravillas"]
+  x = ""
+  pelicula.each do |movies|
+    x += movies.to_s
+  end
+  return x
+end
+%>
+
+<%
+def aves
+  pajaros = ["Colibri", ", " "Buho"]
+  x = ""
+  pajaros.each do |ave|
+    x += ave.to_s
+  end
+  return x
+end
+%>
+
+<ul>
+<li><%= numero %></li>
+<li><%= planetas %></li>
+<li><%= libros %></li>
+<li><%= peliculas %></li>
+<li><%= aves %></li>
+</ul>
