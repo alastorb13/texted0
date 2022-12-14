@@ -1,0 +1,27 @@
+<%
+def factores(num)
+  numero = num
+  primos = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
+  primos = primos.reverse
+  x = []
+  primos.each |primo| do
+    while (numero / primo).integer?
+      x.push(numero)
+      numero = numero / primo
+    end
+  end
+end
+
+def entero(num, primo)
+  test = num / primo
+  if primo = 1
+    false
+  else
+    if test.integer?
+      true
+    else
+      false
+    end
+  end
+end
+%>
