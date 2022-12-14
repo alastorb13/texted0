@@ -1,27 +1,85 @@
 <%
-def factores(num)
-  numero = num
-  primos = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
-  primos = primos.reverse
-  x = []
-  primos.each |primo| do
-    while (numero / primo).integer?
-      x.push(numero)
-      numero = numero / primo
+def factorizar (number)
+  prim = primos(number)
+  div = divisores(number)
+  number_prim = array_comparison(prim,div)
+  count = []
+  debug = []
+  number_prim.each do |num|
+    debug.push("ITERATION: #{num}")
+    result = number
+    counter = 0
+    aux = "Y"
+    while aux == "Y" or counter > 50
+      debug.push("START WHILE. RESULT: #{result}, COUNTER: #{counter}, ENT: #{aux}")
+      count.push(num)
+      result = result / num
+      aux = (entero?(result,num))
+      counter += 1
+      debug.push("END WHILE. RESULT: #{result}, COUNTER: #{counter}, ENT: #{aux}")
     end
   end
+  debug.push("RETURN: #{count}")
+  return count
 end
 
-def entero(num, primo)
-  test = num / primo
-  if primo = 1
-    false
-  else
-    if test.integer?
-      true
-    else
-      false
-    end
+def array_comparison(array1, array2)
+  result = []
+  array1.each do |element|
+    result.push(element) if array2.include?(element)
   end
+  return result
+end
+
+def primos(number)
+  number_array = consecutivos(number)
+  primal_array = []
+  debug = [number_array]
+  number_array.each do |num|
+    debug.push("NUMBER: #{num} LENGTH: #{divisores(num).length}" )
+    primal_array.push(num) if divisores(num).length == 1
+  end
+  return primal_array
+end
+
+def divisores(number)
+  number_array = consecutivos(number)
+  divisors_array = []
+  debug = []
+  number_array.each do |numb|
+    debug.push(" NUMBER: #{number} NUMB: #{numb} ENTERO?: #{entero?(number,numb)}")
+    divisors_array.push(numb) if entero?(number, numb)=="Y"
+  end
+  return divisors_array
+end
+
+def entero?(number1,number2)
+  mod = number1.modulo(number2)
+   if number2 == 1
+     return "1"
+   elsif mod != 0
+     return "N"
+   else
+     return "Y"
+   end
+end
+
+def consecutivos(number)
+  array = []
+  for i in 1..number do
+    array.push(i)
+  end
+  return array.reverse
 end
 %>
+
+<% def print_array(array) %>
+  <ul>
+  <% array.each do |element| %>
+    <li> <%= element %> </li>
+  <% end %>
+  </ul>
+<% end %>
+
+  <% example = 64 %>
+  <%= print_array(factorizar(example)) %>
