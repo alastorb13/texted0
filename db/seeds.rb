@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+servidor = Servidor.create([{ etiqueta: "Get", contenido: "Petición, obtener datos" }, { etiqueta: "Post", contenido: "Crear, enviar datos"}, { etiqueta: "Put", contenido: "Emviar datos y editar recursos existentes"}, { etiqueta: "Patch", contenido: "Actualizar"}, { etiqueta: "Delete", contenido: "Eliminar"}])

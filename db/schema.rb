@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_24_013513) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_05_210746) do
+  create_table "clientes", force: :cascade do |t|
+    t.string "etiqueta"
+    t.string "contenido"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "servidors", force: :cascade do |t|
+    t.string "etiqueta"
+    t.string "contenido"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "texts", force: :cascade do |t|
     t.string "title"
     t.string "content"
